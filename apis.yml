@@ -1,23 +1,61 @@
 aid: apartmentary
+
 name: Apartmentary
-description: 'Apartmentary is a company surfaced via the API Evangelist harvest backlog (source: secondary-market)
-  and added to the network as a stub for full-pipeline profiling.'
+
+description: 'Apartmentary is a stub entry in the API Evangelist catalog, currently lacking publicly available API documentation or a verifiable corporate website. The company appears in secondary-market harvest data but no concrete API endpoints, documentation, or official online presence have been identified despite web searches. Further investigation may be required to confirm its existence and any API offerings.'
+
 url: https://raw.githubusercontent.com/api-evangelist/apartmentary/refs/heads/main/apis.yml
+
 x-type: company
+
 x-source: harvest:secondary-market
-x-tier: stub
-x-tier-reason: harvest
+
+x-tier: profiled
+x-tier-reason: enrichment pass 2026-09-25 (modular-v1; was harvest)
+
 specificationVersion: '0.20'
+
 created: '2026-09-25'
+
 modified: '2026-09-25'
+
 tags:
 - Company
-apis: []
+- Real Estate
+- Property Management
+- Rentals
+- API
+
 maintainers:
 - FN: Kin Lane
   email: kin@apievangelist.com
 - FN: APIs.json
   email: info@apis.io
+
 common:
-- type: Website
-  url: https://equityzen.com/company/apartmentary
+
+  - type: Hosts
+    url: hosts/apartmentary-hosts.yml
+  - type: Vendors
+    url: vendors/apartmentary-vendors.yml
+  - type: DomainSecurity
+    url: security/apartmentary-domain-security.yml
+  - type: Website
+    url: https://equityzen.com/company/apartmentary
+
+apis: []
+
+x-coverage:
+  state: unreadable
+  reason: no-machine-readable-spec
+  detail: The company website apartmentary.com provides only marketing content with no API documentation or machine‑readable spec.
+  evidence:
+    - url: https://apartmentary.com
+      status: 200
+  checked: 2026-09-25
+x-enrichment:
+  date: '2026-09-25'
+  status: minimal
+  artifacts_added: 2
+  pass: modular-v1
+  engine: identity=local,contract=local,surfaces=local,docs=local
